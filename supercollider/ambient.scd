@@ -157,22 +157,22 @@ s.waitForBoot({
 });
 )
 
-//view wavetables
-(
-~wt_sig.reverseDo(_.plot);
-)
-
-(
-Pbindef(\pad).stop;
-Pbindef(\pad2).stop;
-)
-
-(
-Pbindef(\pad).play;
-Pbindef(\pad2).play;
-)
-
-(
-Pbindef(\pad).isPlaying;
-Pbindef(\pad2).isPlaying;
-)
+// view wavetables
+// (
+// ~wt_sig.reverseDo(_.plot);
+// )
+//
+// (
+// Pbindef(\pad).stop;
+// Pbindef(\pad2).stop;
+// )
+//
+// (
+// Pbindef(\pad).play;
+// Pbindef(\pad2).play;
+// )
+//
+// (
+// Pbindef(\pad).isPlaying;
+// Pbindef(\pad2).isPlaying;
+// )
