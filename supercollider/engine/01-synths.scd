@@ -1,14 +1,20 @@
 (
+
 ~rbus = Bus.audio(s,2);
 
 // Scale.directory
 ~scale = Scale.ritusen;
 
-SynthDef(\simpleSine, {|freq = 80, out| Out.ar(out, SinOsc.ar(freq, 0, 0.2)) }).add;
+//// tester ////////////////////////////////////////////////////////////////////
+SynthDef(\simpleSine,
+    {|freq = 80, out| Out.ar(out, SinOsc.ar(freq, 0, 0.2)) }
+).add;
 
 
+//// gamaBell //////////////////////////////////////////////////////////////////
 SynthDef(\gamaBell,
-    {|out = 0, freqs = #[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], rings = #[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], atk = 5, sus = 8, rel = 5, pan = 0, amp = 0.5|
+    {|out = 0, freqs = #[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        rings = #[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], atk = 5, sus = 8, rel = 5, pan = 0, amp = 0.5|
         var e = EnvGen.kr(Env.linen(atk, sus, rel, 1, 4), doneAction: Done.freeSelf);
         var i = Decay.ar(Impulse.ar(Rand(0.8, 2.2)), 0.03, ClipNoise.ar(0.01));
         var z = Klank.ar(

@@ -6,7 +6,6 @@
 // place cursor below this line and execute CMD + enter to execute the section)
 
 
-
 //// rumble sequence ///////////////////////////////////////////////////////////
 Pdef(\rumble,
     Ppar([
@@ -18,7 +17,8 @@ Pdef(\rumble,
             \dur, 8 * Pseq([1, Rest(1/2), 2, Rest(2), 1/2], inf),
             // \shape, 0.3,
             // \distort, 0.01,
-            \lpf, 50
+            \lpf, 50,
+            \orbit, ~out1_2
         ),
         Pbind(
             \type, \dirt,
@@ -28,13 +28,14 @@ Pdef(\rumble,
             \dur, Pseq([16, Rest(1)], inf),
             \gain, 0.8,
             \room, Pseq([0, 0, 0.4], inf),
-            // \lpf, 50
+            // \lpf, 50,
+            \orbit, ~out1_2
         )
     ])
 );
 
 
-
+//// industrial ////////////////////////////////////////////////////////////////
 Pdef(\industrial,
     Ppar([
         Pbind(
@@ -52,6 +53,7 @@ Pdef(\industrial,
     ])
 );
 
+//// rain //////////////////////////////////////////////////////////////////////
 Pdef(\rain,
     Ppar([
         Pbind(
@@ -69,6 +71,7 @@ Pdef(\rain,
     ])
 );
 
+//// tester ////////////////////////////////////////////////////////////////////
 Pdef(\seqtest,
     Ppar([
         Pbind(
@@ -83,6 +86,7 @@ Pdef(\seqtest,
     ])
 );
 
+//// cymbals ///////////////////////////////////////////////////////////////////
 Pdef(\cymbals,
     Ppar([
         Pbind(
@@ -104,6 +108,7 @@ Pdef(\cymbals,
     ])
 );
 
+//// twinkle ///////////////////////////////////////////////////////////////////
 Pdef(\twinkle,
     Ppar([
         Pbind(
@@ -125,6 +130,7 @@ Pdef(\twinkle,
     ])
 );
 
+//// haunted ///////////////////////////////////////////////////////////////////
 Pdef (
 	\haunted,
 	Pbind(
@@ -142,6 +148,7 @@ Pdef (
 	);
 );
 
+//// gravity ///////////////////////////////////////////////////////////////////
 Pdef(\gravity,
     Ppar([
         Pbind(
@@ -195,6 +202,7 @@ Pdef(\paper,
     ])
 );
 
+//// pad ///////////////////////////////////////////////////////////////////////
 Pbindef(\pad,
     \instrument, \osc,
     \dur, Pseq([Rest(10.rand), Prand([1,6,12]),2   , Rest(5.rand), 1.5, 0.5], inf),
@@ -216,6 +224,7 @@ Pbindef(\pad,
     \rsend, -10,
 );
 
+//// pad2 //////////////////////////////////////////////////////////////////////
 Pbindef(\pad2,
     \instrument, \osc,
     \dur, Prand([
