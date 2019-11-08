@@ -76,6 +76,10 @@ Pdef(\rumble).play;
 
 Pdef(\rumble).stop;
 
+Pdef(\haunted).play;
+
+Pdef(\haunted).stop;
+
 // You can also start and stop the sequences from a GUI
 PdefAllGui();
 
