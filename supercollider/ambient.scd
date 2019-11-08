@@ -9,8 +9,8 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 //cleanup
-Pdef.all.do(_.clear);
-Pbindef.all.do(_.clear);
+// Pdef.all.do(_.clear);
+// Pbindef.all.do(_.clear);
 ~wt_buf.do(_.free);
 t.stop;
 ServerTree.remove(~add_reverb);
