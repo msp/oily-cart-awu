@@ -295,6 +295,116 @@ Pbindef(\pad2,
     \rsend, -6,
 );
 
+//// bells /////////////////////////////////////////////////////////////////////
+Pdef(\bell_1,
+    Ppar([
+        Pbind(
+            \type, \dirt,
+            \s, \prayer_bell,
+            \dur, Pseq([8, 20], inf),
+            // \dur, Pseq([5, 5], inf),
+            \freq, Pseq([800, 500], inf),
+            \amp, 0.5,
+            \lag, 0,
+            \trig, Pseq([0.1], inf) * Pwhite(0.5, 1, inf) * Pwrand([0, 1], [1, 5].normalizeSum, inf),
+            \sing_switch, Pseq((0!4) ++ (1!4), inf),
+            \pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
+            \delay, 0.8,
+            \delayt, 0.1,
+            \delayfb, 0.8,
+            \room, Pseq([0.75, 0.25, 0], inf),
+            \size, Pseq([0.75, 0.25, 0], inf),
+            \gain, 0.9,
+            \orbit, ~out1_2
+        )
+    ])
+);
+
+Pdef(\bell_2,
+    Ppar([
+        Pbind(
+            \type, \dirt,
+            \s, \prayer_bell,
+            \dur, Pwhite(8, 20, inf),
+            \trig, Pwhite(0.05, 0.09),
+            \sing_switch, Pwrand([0, 1], [5, 3].normalizeSum, inf),
+            \freq, Prand((240, 360 .. 2000), inf),
+            \amp, 0.3,
+            \pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
+            \gain, 0.9,
+            \orbit, ~out1_2
+        )
+    ])
+);
+
+Pdef(\bell_3,
+  Ppar([
+    Pmono(\prayer_bell,
+      \freq, 100,
+      \dur, 1,
+      \trig, 0,
+      \sing_switch, Pwrand([0, 1], [10, 3].normalizeSum, inf),
+      \amp, Pwhite(0.1, 0.4)
+    ),
+    Pmono(\prayer_bell,
+      \freq, 200,
+      \dur, 3,
+      \trig, 0,
+      \sing_switch, Pwrand([0, 1], [10, 3].normalizeSum, inf),
+      \amp, Pwhite(0.1, 0.3)
+    ),
+    Pmono(\prayer_bell,
+      \freq, 300,
+      \dur, 1,
+      \trig, 0,
+      \sing_switch, Pwrand([0, 1], [10, 3].normalizeSum, inf),
+      \amp, Pwhite(0.1, 0.4)
+    )
+  ])
+);
+
+/*Pdef(\bell_3,
+    Ppar([
+        Pbind(
+            \type, \dirt,
+            \s, \prayer_bell,
+            \freq, 100,
+            \dur, 16,
+            \trig, 1,
+            \sing_switch, Pwrand([0, 1], [10, 3].normalizeSum, inf),
+            \amp, Pwhite(0.1, 0.4),
+            \pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
+            \gain, 0.9,
+            \orbit, ~out1_2
+        ),
+        Pbind(
+            \type, \dirt,
+            \s, \prayer_bell,
+            \freq, 200,
+            \dur, 16,
+            \trig, 1,
+            \sing_switch, Pwrand([0, 1], [10, 3].normalizeSum, inf),
+            \amp, Pwhite(0.1, 0.4),
+            \pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
+            \gain, 0.9,
+            \orbit, ~out1_2
+        ),
+        Pbind(
+            \type, \dirt,
+            \s, \prayer_bell,
+            \freq, 300,
+            \dur, 16,
+            \trig, 1,
+            \sing_switch, Pwrand([0, 1], [10, 3].normalizeSum, inf),
+            \amp, Pwhite(0.1, 0.4),
+            \pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
+            \gain, 0.9,
+            \orbit, ~out1_2
+        )
+    ])
+);*/
+
+
 
 
 
