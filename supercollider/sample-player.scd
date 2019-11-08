@@ -64,6 +64,10 @@ enginePath.files.do{|aFile|
 // place on the line you wish to start/stop and execute CMD + enter to execute
 
 // start/stop sequences
+Pdef(\cellophane).play;
+
+Pdef(\cellophane).stop;
+
 Pdef(\cymbals).play;
 
 Pdef(\cymbals).stop;
@@ -87,6 +91,10 @@ Pdef(\pad).stop;
 Pdef(\pad2).play;
 
 Pdef(\pad2).stop;
+
+Pdef(\paper).play;
+
+Pdef(\paper).stop;
 
 Pdef(\rain).play;
 

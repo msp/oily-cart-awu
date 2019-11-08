@@ -159,6 +159,42 @@ Pdef(\gravity,
     ])
 );
 
+//// cellophane ////////////////////////////////////////////////////////////////
+Pdef(\cellophane,
+    Ppar([
+        Pbind(
+            \type, \dirt,
+            \s, \Paper,
+            \n, Pseq([0], inf),
+            \speed, Pseq([Prand([2, 1, 0.6])], inf),
+            \dur, Pseq([16, Rest(8)], inf),
+            \pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
+            \room, Pseq([0, 0.25, 0.75, 1], inf),
+            \size, Pseq([1, 0.75, 0.25, 0], inf),
+            \gain, 0.85,
+            \orbit, ~out1_2
+        )
+    ])
+);
+
+//// paper /////////////////////////////////////////////////////////////////////
+Pdef(\paper,
+    Ppar([
+        Pbind(
+            \type, \dirt,
+            \s, \Paper,
+            \n, Pseq([Prand([1,2,3,4,5,6,7])], inf),
+            \speed, Pseq([Prand([2, 1, 0.6])], inf),
+            \dur, Pseq([16, Rest(8)], inf),
+            \pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
+            \room, Pseq([0.75, 0.25, 0], inf),
+            \size, Pseq([0.75, 0.25, 0], inf),
+            \gain, 0.8,
+            \orbit, ~out1_2
+        )
+    ])
+);
+
 Pbindef(\pad,
     \instrument, \osc,
     \dur, Pseq([Rest(10.rand), Prand([1,6,12]),2   , Rest(5.rand), 1.5, 0.5], inf),
