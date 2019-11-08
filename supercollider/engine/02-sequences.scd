@@ -220,5 +220,5 @@ Pbindef(\pad2,
 "List all sequences........".postln;
 Pdef.all.do(_.postln);
 
-// PdefAllGui();
+PdefAllGui();
 )
