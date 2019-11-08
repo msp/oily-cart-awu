@@ -13,7 +13,7 @@ Pdef(\rumble,
         Pbind(
             \type, \dirt,
             \s, \rumble,
-            \n, Pseq([Prand([0,1,2,3,4,5,6])], inf),
+            \n, Pseq([Prand([0,1,6])], inf),
             \speed, Pseq([0.8, 1, 0.5, 1.2], inf),
             \dur, 8 * Pseq([1, Rest(1/2), 2, Rest(2), 1/2], inf),
             // \shape, 0.3,
@@ -159,6 +159,60 @@ Pdef(\gravity,
     ])
 );
 
+Pbindef(\pad,
+    \instrument, \osc,
+    \dur, Pseq([Rest(10.rand), Prand([1,6,12]),2   , Rest(5.rand), 1.5, 0.5], inf),
+    \atk, Pexprand(3,6),
+    \sus, 0,
+    \rel, Pexprand(5,10),
+    \c0, Pexprand(1,2),
+    \c1, Pexprand(1,2).neg,
+    \detune, Pfunc({rrand(0.15,0.4)}!3),
+    \buf, Prand(~wt_buf[0..3], inf),
+    \scale, ~scale,
+    \degree, Pfunc({
+        (-12,-10..12).scramble[0..rrand(1,3)]
+    }),
+    \amp, Pexprand(0.05,0.07),
+    \pan, Pwhite(-0.4,0.4),
+    \out, 0,
+    \rout, ~rbus,
+    \rsend, -10,
+);
+
+Pbindef(\pad2,
+    \instrument, \osc,
+    \dur, Prand([
+        Pseq([Rest(10.rand), Prand([12,16,20]),2   , 1.5, 0.5], 1),
+        Pseq([Rest(10.rand), Prand([12,16,20]),1.5, 1   , 1.5], 1),
+    ],inf),
+    // \degree, Pfunc({
+    //     (-12,-10..0).scramble[0..rrand(1,3)]
+    // }), // Not if using midinotes - see hierachy at pBind detunedFreq help
+    \atk, rrand(3,10),
+    \sus, 0.3,
+    \rel, rrand(2, 5),
+    \c0, -2,
+    \c1, -2,
+    \detune, Pexprand(0.18,0.25),
+    \buf, Pwrand([
+        Pseq([~wt_buf[0]],4),
+        Pseq([~wt_buf[3]],4),
+        Pseq([~wt_buf[7]],4),
+    ],[15,3,1].normalizeSum,inf),
+    \scale, ~scale,
+    \midinote, Pxrand([
+        Pseq([\,67,60,Prand([58,70,\])],1),
+        Pseq([\,67,58,Prand([57,63,\])],1),
+        Pseq([\,70,72,Prand([65,79,\])],1)
+    ],inf),
+    \amp, Pseq([0,0.18,0.24,0.28],inf),
+    \out, 0,
+    \rout, ~rbus,
+    \rsend, -6,
+);
+
+
 
 
 
@@ -166,5 +220,5 @@ Pdef(\gravity,
 "List all sequences........".postln;
 Pdef.all.do(_.postln);
 
-PdefAllGui();
+// PdefAllGui();
 )
