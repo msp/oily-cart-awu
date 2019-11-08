@@ -80,6 +80,10 @@ Pdef(\haunted).play;
 
 Pdef(\haunted).stop;
 
+Pdef(\gravity).play;
+
+Pdef(\gavity).stop;
+
 // You can also start and stop the sequences from a GUI
 PdefAllGui();
 
