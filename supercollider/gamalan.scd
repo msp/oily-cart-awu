@@ -21,21 +21,22 @@
 r = Routine{
     var sustain = 7, transition = 3, overlap = 4;
     var period = transition * 2 + sustain / overlap;
-        0.5.wait;            // wait for the synthdef to be sent to the server
-        inf.do{
-                Synth(\gamaBell, [
-                        \atk, transition,
-                        \amp, 1.0.rand,
-                        \sus, sustain,
-                        \rel, transition,
-                        \pan, 1.0.rand2,
-                        \freqs, {50.0.rrand(4000)}.dup(12),
-                        \rings, {0.1.rrand(2)}.dup(12)
-                ]);
+    0.5.wait;            // wait for the synthdef to be sent to the server
+    inf.do{
+        Synth(\gamaBell, [
+            \atk, transition,
+            // \amp, 1.0.rand,
+            \amp, 0.5.rand,
+            \sus, sustain,
+            \rel, transition,
+            \pan, 1.0.rand2,
+            \freqs, {50.0.rrand(4000)}.dup(12),
+            \rings, {0.1.rrand(2)}.dup(12)
+        ]);
         "waiting for ".post;
         period.postln;
-                period.wait;
-        }
+        period.wait;
+    }
 };
 r.play;
 )
@@ -56,6 +57,7 @@ Synth(\gamaBell, [
     \atk, 2,
     \sus, 2,
     \rel, 3,
+    \amp, 0.5.rand,
     \pan, 1.0.rand2,
     \freqs, {50.0.rrand(4000)}.dup(12),
     \rings, {0.1.rrand(2)}.dup(12)
