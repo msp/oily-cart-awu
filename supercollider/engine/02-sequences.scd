@@ -71,6 +71,44 @@ Pdef(\rain,
     ])
 );
 
+//// pool //////////////////////////////////////////////////////////////////////
+Pdef(\pool,
+    Ppar([
+        Pbind(
+            \type, \dirt,
+            \s, \soundfx,
+            \n, Pseq([2], inf),
+            \speed, Pseq([Prand([0.2, 0.5, 1])], inf),
+            \dur, Pseq([32, Rest(8)], inf),
+            \pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
+            \room, Pseq([0, 0.25, 0.75, 1], inf),
+            \size, Pseq([1, 0.75, 0.25, 0], inf),
+            \gain, 0.85,
+            \orbit, ~out1_2
+        )
+    ])
+);
+
+//// charger ///////////////////////////////////////////////////////////////////
+Pdef(\charger,
+    Ppar([
+        Pbind(
+            \type, \dirt,
+            \s, \soundfx,
+            \n, Pseq([4], inf),
+            \speed, Pseq([Prand([0.2, 0.5, 1, 2])], inf),
+            \dur, Pseq([8, Rest(6)], inf),
+            \pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
+            \room, Pseq([0, 0.25, 0.75, 1], inf),
+            \size, Pseq([1, 0.75, 0.25, 0], inf),
+            \comb, Pseq([Prand([0.2, 0.5, 0.8])], inf),
+            \hbrick, Pseq([Pwrand([0, 0.1, 0.2],[0.7, 0.2, 0.1])], inf),
+            \gain, 0.7,
+            \orbit, ~out1_2
+        )
+    ])
+);
+
 //// tester ////////////////////////////////////////////////////////////////////
 Pdef(\seqtest,
     Ppar([

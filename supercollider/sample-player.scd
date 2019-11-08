@@ -72,6 +72,10 @@ Pdef(\cymbals).play;
 
 Pdef(\cymbals).stop;
 
+Pdef(\charger).play;
+
+Pdef(\charger).stop;
+
 Pdef(\gravity).play;
 
 Pdef(\gravity).stop;
@@ -95,6 +99,10 @@ Pdef(\pad2).stop;
 Pdef(\paper).play;
 
 Pdef(\paper).stop;
+
+Pdef(\pool).play;
+
+Pdef(\pool).stop;
 
 Pdef(\rain).play;
 
