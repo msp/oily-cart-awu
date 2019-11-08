@@ -196,8 +196,8 @@ Pdef(\gravity,
             \speed, Pseq([Prand([5, 0.2, 0.1, 0.5, 1.2, 2, 0.8])], inf),
             \dur, Pseq([8, Rest(4)], inf),
             \pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
-            \room, Pseq([0, 0.25, 0.75, 1], inf),
-            \size, Pseq([1, 0.75, 0.25, 0], inf),
+            \room, Pseq([0, 0.25, 0.75], inf),
+            \size, Pseq([0.75, 0.25, 0], inf),
             \gain, 0.85,
             \orbit, ~out1_2
         )
