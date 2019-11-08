@@ -12,7 +12,9 @@ Synth(\Pdefhelp)
 
 Pbindef(\a, \instrument, \Pdefhelp).play;
 
-Pbindef(\a, \degree, -12);
+Pbindef(\a, \degree, [-12, 12, 0, 1, 2]);
+
+Pbindef(\a, \degree, 12);
 
 Pbindef(\a, \degree, Pfunc({
             (-12,-10..0).scramble[0..rrand(1,3)]
@@ -49,10 +51,20 @@ Pbindef(\a, \degree, Pseq([1, 2, 3, 4, 5, 6], 3), \dur, 0.1);
 
 
 
-Pbindef(\a).free;
+Pbindef(\a).stop;
 
 
 
 Pbind(\note, Pseq([0, 4, 7, 11], inf), \dur, Pseq([2, 1, Rest(1)], inf) / 5).play;
+
+
+Platform.systemAppSupportDir
+
+File.mkdir(Platform.userAppSupportDir)
+
+Platform.userAppSupportDir
+
+/Users/spatial/Library/Application Support/SuperCollider/downloaded-quarks
+
 
 
