@@ -64,9 +64,29 @@ enginePath.files.do{|aFile|
 // place on the line you wish to start/stop and execute CMD + enter to execute
 
 // start/stop sequences
+Pdef(\cymbals).play;
+
+Pdef(\cymbals).stop;
+
+Pdef(\gravity).play;
+
+Pdef(\gravity).stop;
+
+Pdef(\haunted).play;
+
+Pdef(\haunted).stop;
+
 Pdef(\industrial).play;
 
 Pdef(\industrial).stop;
+
+Pdef(\pad).play;
+
+Pdef(\pad).stop;
+
+Pdef(\pad2).play;
+
+Pdef(\pad2).stop;
 
 Pdef(\rain).play;
 
@@ -76,13 +96,10 @@ Pdef(\rumble).play;
 
 Pdef(\rumble).stop;
 
-Pdef(\haunted).play;
+Pdef(\twinkle).play;
 
-Pdef(\haunted).stop;
+Pdef(\twinkle).stop;
 
-Pdef(\gravity).play;
-
-Pdef(\gavity).stop;
 
 // You can also start and stop the sequences from a GUI
 PdefAllGui();
