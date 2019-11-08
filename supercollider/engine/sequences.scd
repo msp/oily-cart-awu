@@ -83,6 +83,27 @@ Pdef(\seqtest,
     ])
 );
 
+Pdef(\cymbals,
+    Ppar([
+        Pbind(
+            \type, \dirt,
+            \s, \cr,
+            \n, Pseq([1, 0, 1, 5], inf),
+            \speed, Pseq([Prand([0, 0.1, 0.15])], inf),
+            \dur, Pseq([Prand([5, 10])], inf),
+            // \dur, Pseq([Prand([3])], inf),
+            \crush, 6,
+            \room, Pseq([0, 0.25, 0.75, 1], inf),
+            \size, Pseq([1, 0.75, 0.25, 0], inf),
+            \comb, 0.5,
+            \hbrick, Pseq([Pwrand([0, 0.1, 0.2],[0.7, 0.2, 0.1])], inf),
+            \enhance, 0.05,
+            \gain, 0.6,
+            \orbit, ~out1_2
+        )
+    ])
+);
+
 Pdef(\twinkle,
     Ppar([
         Pbind(
@@ -114,7 +135,7 @@ Pdef (
         // \freq, Pexprand(300, 600, inf),
 		\atk, Pwhite(2.0, 3.0, inf),
 		\rel, Pwhite(5.0, 10.0, inf),
-		\amp, Pkey(\harmonic).reciprocal * 0.3,
+		\amp, Pkey(\harmonic).reciprocal * 0.2,
 		\pan, Pwhite(-0.8, 0.8, inf),
         \gain, 0.4,
         \orbit, ~out1_2
