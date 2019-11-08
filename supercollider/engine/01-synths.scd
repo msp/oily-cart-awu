@@ -34,7 +34,8 @@ SynthDef(\hauntedSine, {
     env = EnvGen.kr(Env.new([0,1,0], [atk, rel], [1 -1]), doneAction:2);
     sig = Pan2.ar(sig, pan, amp);
     sig = sig * env;
-    Out.ar(out, sig);
+    // Out.ar(out, sig);
+    OffsetOut.ar(out, DirtPan.ar(sig, ~dirt.numChannels, pan))
 }).add;
 
 ////////////////////////////////////////////////////////////////////////////////
