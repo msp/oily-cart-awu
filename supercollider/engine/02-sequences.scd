@@ -15,20 +15,19 @@ Pdef(\rumble,
             \n, Pseq([Prand([0,1,6])], inf),
             \speed, Pseq([0.8, 1, 0.5, 1.2], inf),
             \dur, 8 * Pseq([1, Rest(1/2), 2, Rest(2), 1/2], inf),
-            // \shape, 0.3,
-            // \distort, 0.01,
-            \lpf, 50,
+            \shape, 0.3,
+            \distort, 0.01,
+            \cutoff, 50,
             \orbit, ~out1_2
         ),
         Pbind(
             \type, \dirt,
             \s, 'form-msp5',
             \n, Pseq([0, 1], inf),
-            \speed, Pseq([0.2, 0.5, 1], inf),
+            \speed, Pseq([0.2, 0.5], inf),
             \dur, Pseq([16, Rest(1)], inf),
             \gain, 0.8,
             \room, Pseq([0, 0, 0.4], inf),
-            // \lpf, 50,
             \orbit, ~out1_2
         )
     ])
@@ -338,71 +337,106 @@ Pdef(\bell_2,
 );
 
 Pdef(\bell_3,
-  Ppar([
-    Pmono(\prayer_bell,
-      \freq, 100,
-      \dur, 1,
-      \trig, 0,
-      \sing_switch, Pwrand([0, 1], [10, 3].normalizeSum, inf),
-      \amp, Pwhite(0.1, 0.4)
-    ),
-    Pmono(\prayer_bell,
-      \freq, 200,
-      \dur, 3,
-      \trig, 0,
-      \sing_switch, Pwrand([0, 1], [10, 3].normalizeSum, inf),
-      \amp, Pwhite(0.1, 0.3)
-    ),
-    Pmono(\prayer_bell,
-      \freq, 300,
-      \dur, 1,
-      \trig, 0,
-      \sing_switch, Pwrand([0, 1], [10, 3].normalizeSum, inf),
-      \amp, Pwhite(0.1, 0.4)
-    )
-  ])
+    Ppar([
+        Pmono(\prayer_bell,
+            \freq, 100,
+            \dur, 1,
+            \trig, 0,
+            \sing_switch, Pwrand([0, 1], [10, 3].normalizeSum, inf),
+            \amp, Pwhite(0.1, 0.4)
+        ),
+        Pmono(\prayer_bell,
+            \freq, 200,
+            \dur, 3,
+            \trig, 0,
+            \sing_switch, Pwrand([0, 1], [10, 3].normalizeSum, inf),
+            \amp, Pwhite(0.1, 0.3)
+        ),
+        Pmono(\prayer_bell,
+            \freq, 300,
+            \dur, 1,
+            \trig, 0,
+            \sing_switch, Pwrand([0, 1], [10, 3].normalizeSum, inf),
+            \amp, Pwhite(0.1, 0.4)
+        )
+    ])
 );
 
 /*Pdef(\bell_3,
+Ppar([
+Pbind(
+\type, \dirt,
+\s, \prayer_bell,
+\freq, 100,
+\dur, 16,
+\trig, 1,
+\sing_switch, Pwrand([0, 1], [10, 3].normalizeSum, inf),
+\amp, Pwhite(0.1, 0.4),
+\pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
+\gain, 0.9,
+\orbit, ~out1_2
+),
+Pbind(
+\type, \dirt,
+\s, \prayer_bell,
+\freq, 200,
+\dur, 16,
+\trig, 1,
+\sing_switch, Pwrand([0, 1], [10, 3].normalizeSum, inf),
+\amp, Pwhite(0.1, 0.4),
+\pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
+\gain, 0.9,
+\orbit, ~out1_2
+),
+Pbind(
+\type, \dirt,
+\s, \prayer_bell,
+\freq, 300,
+\dur, 16,
+\trig, 1,
+\sing_switch, Pwrand([0, 1], [10, 3].normalizeSum, inf),
+\amp, Pwhite(0.1, 0.4),
+\pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
+\gain, 0.9,
+\orbit, ~out1_2
+)
+])
+);*/
+
+//// noise /////////////////////////////////////////////////////////////////////
+Pdef(\noise,
     Ppar([
         Pbind(
             \type, \dirt,
-            \s, \prayer_bell,
-            \freq, 100,
-            \dur, 16,
-            \trig, 1,
-            \sing_switch, Pwrand([0, 1], [10, 3].normalizeSum, inf),
-            \amp, Pwhite(0.1, 0.4),
+            \s, \supernoise,
+            // \dur, Pseq([8, Rest(1)], inf),
+            \dur, Pseq([4, Rest(1)], inf),
             \pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
-            \gain, 0.9,
+            \distort, 0.3,
+            // \cutoff, Pseq([1750, 5000, 10000]),
+            \resonance, Pseq([0.9, 0.2, 0.3], inf),
+            \phaserrate, 0.4,
+            \phaserdepth, 0.6,
+            // why no workie?!
+            // \delaytime, 0.4,
+            // \delayfeedback, 0.5,
+            // \delaySend, 1,
+            \gain, 0.85,
             \orbit, ~out1_2
         ),
         Pbind(
             \type, \dirt,
-            \s, \prayer_bell,
-            \freq, 200,
-            \dur, 16,
-            \trig, 1,
-            \sing_switch, Pwrand([0, 1], [10, 3].normalizeSum, inf),
-            \amp, Pwhite(0.1, 0.4),
+            \s, \superstatic,
+            \freq, Pseq([Pwrand([100, 500, 1000, 1500, 2000], [5, 3, 2, 3, 6].normalizeSum)], inf),
+            \dur, Pseq([8, Rest(3)], inf),
             \pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
-            \gain, 0.9,
-            \orbit, ~out1_2
-        ),
-        Pbind(
-            \type, \dirt,
-            \s, \prayer_bell,
-            \freq, 300,
-            \dur, 16,
-            \trig, 1,
-            \sing_switch, Pwrand([0, 1], [10, 3].normalizeSum, inf),
-            \amp, Pwhite(0.1, 0.4),
-            \pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
-            \gain, 0.9,
+            \crush, 4,
+            \distort, 0.1,
+            \gain, 0.75,
             \orbit, ~out1_2
         )
     ])
-);*/
+);
 
 
 
