@@ -439,7 +439,7 @@ Pdef(\noise,
 );
 
 
-//// chimes ///////////////////////////////////////////////////////////////////
+//// chimes ////////////////////////////////////////////////////////////////////
 Pdef(\chimes,
     Ppar([
         Pbind(
@@ -527,6 +527,42 @@ Pdef(\choir,
     ])
 );
 
+//// sunrise ///////////////////////////////////////////////////////////////////
+Pdef(\sunrise,
+    Ppar([
+        Pbind(
+            \type, \dirt,
+            \s, \formsally,
+            \n, Pseq([Pwrand([5], [10].normalizeSum, inf)], inf),
+            \speed, Pseq([Prand([0.4, 0.8])], inf),
+            \dur, Pseq([16, Rest(4), 8], inf),
+            \pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
+            \room, Pseq([0.5, 0.25], inf),
+            \size, Pseq([0.5, 0.25], inf),
+            \gain, 0.9,
+            \orbit, ~out1_2
+        ),
+    ])
+);
+
+//// running ///////////////////////////////////////////////////////////////////
+Pdef(\running,
+    Ppar([
+        Pbind(
+            \type, \dirt,
+            \s, \formsally,
+            \n, Pseq([Pwrand([6], [10].normalizeSum, inf)], inf),
+            \speed, Pseq([Prand([0.4, 0.8])], inf),
+            \dur, Pseq([Pwrand([0.1, 0.2, 1], [10, 5, 1].normalizeSum, inf)], inf),
+            \pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
+            \room, Pseq([0.5, 0.25], inf),
+            \size, Pseq([0.5, 0.25], inf),
+            \gain, 0.8,
+            \orbit, ~out1_2
+        ),
+    ])
+);
+
 
 
 
@@ -535,5 +571,5 @@ Pdef(\choir,
 "List all sequences........".postln;
 Pdef.all.do(_.postln);
 
-//PdefAllGui(20);
+PdefAllGui(30);
 )
