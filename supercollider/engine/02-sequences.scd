@@ -553,7 +553,7 @@ Pdef(\running,
             \s, \formsally,
             \n, Pseq([Pwrand([6], [10].normalizeSum, inf)], inf),
             \speed, Pseq([Prand([0.4, 0.8])], inf),
-            \dur, Pseq([Pwrand([0.1, 0.2, 1], [10, 5, 1].normalizeSum, inf)], inf),
+            \dur, Pseq([Pwrand([0.1, 0.2, 1], [30, 15, 1].normalizeSum, inf)], inf),
             \pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
             \room, Pseq([0.5, 0.25], inf),
             \size, Pseq([0.5, 0.25], inf),
@@ -577,8 +577,37 @@ Pdef(\chipsoul,
             \size, Pseq([0.5, 0.25], inf),
             \gain, 0.8,
             \orbit, ~out1_2
-        ),
+        )
     ])
+);
+
+Pdef(
+    \sunrisearp,
+    Pbind(
+        \type, \dirt,
+        \s, \hauntedSine,
+        \dur, Pseq([1/16, 1/12, 1/16], inf),
+        \stretch, 2.875,
+        \note, Pxrand([0, 3, 5, 8, 10, 12], inf),
+        \atk, Pexprand(0.05, 0.1, inf),
+        \sustain, Pwhite(0.5, 2, inf),
+        \octave, 6,
+        \rel, Pexprand(0.05, 0.1, inf),
+        \amp, Pexprand(0.8, 0.9, inf),
+        \pan, Pwhite(-0.8, 0.8, inf),
+        \delay, 0.2,
+        \delayt, 0.1,
+        \delayfb, 0.8,
+        \room, Pseq([0.5, 0.25], inf),
+        \size, Pseq([0.5, 0.25], inf),
+        \hcutoff, 2200,
+        // \hcutoff, Pwhite(500, 2200, inf),
+        // \phaserdepth, 0.8,
+        // \phaserrate, 0.8,
+        // \psratio, 1,
+        \gain, 0.85,
+        \orbit, ~out1_2
+    );
 );
 
 
@@ -589,5 +618,5 @@ Pdef(\chipsoul,
 "List all sequences........".postln;
 Pdef.all.do(_.postln);
 
-PdefAllGui(30);
+// PdefAllGui(30);
 )
