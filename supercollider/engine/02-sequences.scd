@@ -491,6 +491,24 @@ Pdef(\scissors,
     ])
 );
 
+//// intro /////////////////////////////////////////////////////////////////////
+Pdef(\intro,
+    Ppar([
+        Pbind(
+            \type, \dirt,
+            \s, \formsally,
+            \n, Pseq([Prand([0])], inf),
+            \speed, Pseq([Prand([0.5, 1, 2])], inf),
+            \dur, Pseq([4, Rest(2)], inf),
+            \pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
+            \room, Pseq([0.5, 0.25, 0], inf),
+            \size, Pseq([0.5, 0.25, 0], inf),
+            \gain, 0.9,
+            \orbit, ~out1_2
+        )
+    ])
+);
+
 
 
 
