@@ -563,6 +563,24 @@ Pdef(\running,
     ])
 );
 
+//// chipsoul ///////////////////////////////////////////////////////////////////
+Pdef(\chipsoul,
+    Ppar([
+        Pbind(
+            \type, \dirt,
+            \s, \formsally,
+            \n, Pseq([Pwrand([1], [10].normalizeSum, inf)], inf),
+            \speed, Pseq([Prand([0.4, 0.8])], inf),
+            \dur, Pseq([Pwrand([0.5, 1], [10, 5, 1].normalizeSum, inf)], inf),
+            \pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
+            \room, Pseq([0.5, 0.25], inf),
+            \size, Pseq([0.5, 0.25], inf),
+            \gain, 0.8,
+            \orbit, ~out1_2
+        ),
+    ])
+);
+
 
 
 
