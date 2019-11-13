@@ -439,6 +439,58 @@ Pdef(\noise,
 );
 
 
+//// chimes ///////////////////////////////////////////////////////////////////
+Pdef(\chimes,
+    Ppar([
+        Pbind(
+            \type, \dirt,
+            \s, \soundfx,
+            \n, Pseq([Prand([5,6,7])], inf),
+            \speed, Pseq([Prand([0.1, 0.6, 1, 2])], inf),
+            \dur, Pseq([16, Rest(8)], inf),
+            \pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
+            \gain, 0.9,
+            \orbit, ~out1_2
+        )
+    ])
+);
+
+//// modular ///////////////////////////////////////////////////////////////////
+Pdef(\modular,
+    Ppar([
+        Pbind(
+            \type, \dirt,
+            \s, \modular,
+            \n, Pseq([Prand([0,1,2])], inf),
+            \speed, Pseq([Prand([0.5, 1, 2])], inf),
+            \dur, Pseq([4, Rest(4)], inf),
+            \pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
+            \room, Pseq([0.5, 0.25, 0], inf),
+            \size, Pseq([0.5, 0.25, 0], inf),
+            \gain, 0.85,
+            \orbit, ~out1_2
+        )
+    ])
+);
+
+//// scissors //////////////////////////////////////////////////////////////////
+Pdef(\scissors,
+    Ppar([
+        Pbind(
+            \type, \dirt,
+            \s, \soundfx,
+            \n, Pseq([Prand([8,9,10])], inf),
+            \speed, Pseq([Prand([0.5, 1, 2])], inf),
+            \dur, Pseq([4, Rest(4)], inf),
+            \pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
+            \room, Pseq([0.5, 0.25, 0], inf),
+            \size, Pseq([0.5, 0.25, 0], inf),
+            \gain, 0.85,
+            \orbit, ~out1_2
+        )
+    ])
+);
+
 
 
 
@@ -447,5 +499,5 @@ Pdef(\noise,
 "List all sequences........".postln;
 Pdef.all.do(_.postln);
 
-PdefAllGui();
+PdefAllGui(20);
 )
