@@ -498,11 +498,29 @@ Pdef(\intro,
             \type, \dirt,
             \s, \formsally,
             \n, Pseq([Prand([0])], inf),
-            \speed, Pseq([Prand([0.5, 1, 2])], inf),
+            \speed, Pseq([Prand([0.5, 1, 1.6])], inf),
             \dur, Pseq([4, Rest(2)], inf),
             \pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
             \room, Pseq([0.5, 0.25, 0], inf),
             \size, Pseq([0.5, 0.25, 0], inf),
+            \gain, 0.9,
+            \orbit, ~out1_2
+        )
+    ])
+);
+
+//// choir /////////////////////////////////////////////////////////////////////
+Pdef(\choir,
+    Ppar([
+        Pbind(
+            \type, \dirt,
+            \s, \vocals,
+            \n, Pseq([Pwrand([0, 2], [10, 2].normalizeSum, inf)], inf),
+            \speed, Pseq([Prand([0.1, 0.5, 0.75, 1])], inf),
+            \dur, Pseq([4, 2, 6], inf),
+            \pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
+            \room, Pseq([0.5, 0.25], inf),
+            \size, Pseq([0.5, 0.25], inf),
             \gain, 0.9,
             \orbit, ~out1_2
         )
