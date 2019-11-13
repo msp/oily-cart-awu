@@ -515,9 +515,9 @@ Pdef(\choir,
         Pbind(
             \type, \dirt,
             \s, \vocals,
-            \n, Pseq([Pwrand([0, 2], [10, 2].normalizeSum, inf)], inf),
-            \speed, Pseq([Prand([0.1, 0.5, 0.75, 1])], inf),
-            \dur, Pseq([4, 2, 6], inf),
+            \n, Pseq([Pwrand([0], [10].normalizeSum, inf)], inf),
+            \speed, Pseq([Prand([0.8, 1, 1.2, 1.4])], inf),
+            \dur, Pseq([4, Rest(2), 6], inf),
             \pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
             \room, Pseq([0.5, 0.25], inf),
             \size, Pseq([0.5, 0.25], inf),
@@ -535,5 +535,5 @@ Pdef(\choir,
 "List all sequences........".postln;
 Pdef.all.do(_.postln);
 
-PdefAllGui(20);
+//PdefAllGui(20);
 )
