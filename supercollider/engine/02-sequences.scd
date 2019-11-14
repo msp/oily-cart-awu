@@ -118,6 +118,7 @@ Pdef(\seqtest,
             \speed, 1,
             \dur, 1,
             \gain, 0.7,
+            \pan, Pseq([0.2, 0.4, 0.6, 0.8, 1], inf),
             \orbit, ~out1_2
         )
     ])
