@@ -618,5 +618,6 @@ Pdef(
 "List all sequences........".postln;
 Pdef.all.do(_.postln);
 
-// PdefAllGui(30);
+
+PdefAllGui(Pdef.all.size);
 )
