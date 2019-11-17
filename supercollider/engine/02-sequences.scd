@@ -613,6 +613,49 @@ Pdef(
 
 
 
+//// teleharmonic ///////////////////////////////////////////////////////////////////
+Pdef(\teleharmonic,
+    Ppar([
+        Pbind(
+            \type, \dirt,
+            \s, \teleharmonic,
+            // \n, Pseq([Pwrand([1], [10].normalizeSum, inf)], inf),
+            \n, Pseq([0,1,2,3,4], inf),
+            \speed, Pseq([Prand([0.5, 1, 1.5], inf)], inf),
+            \cutoff, 50,
+            \resonance, 0.5,
+            \shape, 0.5,
+            // \distort, 0.01,
+            \crush, 4,
+            \phaserdepth, 0.8,
+            \phaserrate, 0.8,
+            \psratio, 1,
+            // \room, Pseq([0.5, 0.25], inf),
+            // \size, Pseq([0.5, 0.25], inf),
+            \gain, 0.9,
+            \orbit, ~out1_2
+        ),
+        Pbind(
+            \type, \dirt,
+            \s, \teleharmonic,
+            \n, Pseq([Pwrand([2, 3, 4], [5, 7, 10].normalizeSum, inf)], inf),
+            // \n, Pseq([0,1,2,3,4], inf),
+            \dur, Pseq([Pwrand([Rest(8), 4, 8, 1], [5, 10, 5, 1].normalizeSum, inf)], inf),
+            // \speed, Pseq([Prand([0.8, 1, 1.5, 2, 3], inf)], inf),
+            \speed, Pseq([Pwrand([3, 2, 1.5, 1, 0.8], [10, 5, 4, 3, 2].normalizeSum, inf)], inf),
+            \hcutoff, 550,
+            \room, Pseq([0.5, 0.65], inf),
+            \size, Pseq([0.5, 0.65], inf),
+            \delay, 0.5,
+            \delayt, 0.3,
+            \delayfb, 0.8,
+            \pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
+            \gain, 0.95,
+            \orbit, ~out1_2
+        )
+    ])
+);
+
 
 
 "".postln;
