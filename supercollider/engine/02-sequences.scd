@@ -546,42 +546,6 @@ Pdef(\sunrise,
     ])
 );
 
-//// running ///////////////////////////////////////////////////////////////////
-Pdef(\running,
-    Ppar([
-        Pbind(
-            \type, \dirt,
-            \s, \formsally,
-            \n, Pseq([Pwrand([6], [10].normalizeSum, inf)], inf),
-            \speed, Pseq([Prand([0.4, 0.8])], inf),
-            \dur, Pseq([Pwrand([0.1, 0.2, 1], [30, 15, 1].normalizeSum, inf)], inf),
-            \pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
-            \room, Pseq([0.5, 0.25], inf),
-            \size, Pseq([0.5, 0.25], inf),
-            \gain, 0.8,
-            \orbit, ~out1_2
-        ),
-    ])
-);
-
-//// chipsoul ///////////////////////////////////////////////////////////////////
-Pdef(\chipsoul,
-    Ppar([
-        Pbind(
-            \type, \dirt,
-            \s, \formsally,
-            \n, Pseq([Pwrand([1], [10].normalizeSum, inf)], inf),
-            \speed, Pseq([Prand([0.4, 0.8])], inf),
-            \dur, Pseq([Pwrand([0.5, 1], [10, 5, 1].normalizeSum, inf)], inf),
-            \pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
-            \room, Pseq([0.5, 0.25], inf),
-            \size, Pseq([0.5, 0.25], inf),
-            \gain, 0.8,
-            \orbit, ~out1_2
-        )
-    ])
-);
-
 Pdef(
     \sunrisearp,
     Pbind(
@@ -611,9 +575,111 @@ Pdef(
     );
 );
 
+//// running ///////////////////////////////////////////////////////////////////
+Pdef(\running,
+    Ppar([
+        Pbind(
+            \type, \dirt,
+            \s, \formsally,
+            \n, 6,
+            \speed, Pseq([Prand([0.4, 0.8])], inf),
+            \dur, Pseq([Pwrand([0.1, 0.2, 1], [30, 15, 1].normalizeSum, inf)], inf),
+            \pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
+            \room, Pseq([0.5, 0.25], inf),
+            \size, Pseq([0.5, 0.25], inf),
+            \gain, 0.8,
+            \orbit, ~out1_2
+        ),
+    ])
+);
 
+//// chipsoul //////////////////////////////////////////////////////////////////
+Pdef(\chipsoul,
+    Ppar([
+        Pbind(
+            \type, \dirt,
+            \s, \formsally,
+            \n, 1,
+            \speed, 0.4,
+            \end, Pwrand([0.5, 1], [30, 1].normalizeSum, inf),
+            // \dur, Pseq([10, 5, 10, 5, 0.5, 1, 5, 10, 5, 1], inf),
+            \dur, Pseq([
+                Pseq([10], 8),
+                Pseq([5], 1),
+                Pseq([0.5], 1),
+                Pseq([1, Rest(9), 0.5], 2),
+                Pseq([5], 1),
+            ], inf),
+            \pan, Pseq([0.45, 0.5, 0.55], inf),
+            \room, Pseq([0.45], inf),
+            \size, Pseq([0.45], inf),
+            // \hcutoff, Pseq([0, 50, 100, 150, 250], inf),
+            \hcutoff, Pseq([
+                Pseq([50], 8),
+                Pseq([50], 1),
+                Pseq([150], 1),
+                Pseq([100, 100, 200], 2),
+                Pseq([200], 1),
+            ], inf),
+            \gain, 0.85,
+            \orbit, ~out1_2
+        )
+    ])
+);
 
-//// teleharmonic ///////////////////////////////////////////////////////////////////
+Pdef(\chipsoul2,
+    Ppar([
+        Pbind(
+            \type, \dirt,
+            \s, \formsally,
+            \n, 1,
+            \speed, Pwrand([0.8, 1.2, 1.4, 2], [4, 0.6, 0.4, 0.2].normalizeSum, inf),
+            \end, Pwrand([0.8, 1], [10, 1].normalizeSum, inf),
+            \dur, Pseq([Pwrand([0.5, 1, 4, 8], [2, 5, 10, 4].normalizeSum, inf)], inf),
+            \pan, Prand([0, 0.25, 0.75, 1], inf),
+            \room, Pseq([0.5], inf),
+            \size, Pseq([0.5], inf),
+            \hcutoff, Pseq([400, 800, 2400], inf),
+            \gain, 0.5,
+            \orbit, ~out1_2
+        )
+    ])
+);
+
+//// pulser ////////////////////////////////////////////////////////////////////
+Pdef(\pulser,
+    Ppar([
+        Pbind(
+            \type, \dirt,
+            \s, \super808,
+            \n, Pseq([
+                Pseq([0], 24),
+                Pseq([3], 4),
+            ], inf),
+            \sustain, Pseq([
+                Pseq([0.2], 8),
+                Pseq([0.4], 8),
+                Pseq([0.1, 0.4], 8),
+                Pseq([0.8, 4], 4),
+            ], inf),
+            \voice, Pseq([
+                Pseq([0.1], 8),
+                Pseq([0.4], 8),
+                Pseq([0.1], 8),
+                Pseq([0.8], 4),
+            ], inf),
+            \speed, 1,
+            \dur, Pwhite(1.15, 1.25, inf) / 8,
+            \gain, 0.9,
+            \shape, 0.4,
+            \crush, Pwrand([50, 4], [20, 1].normalizeSum, inf),
+            \pan, 0.5,
+            \orbit, ~out1_2
+        )
+    ])
+);
+
+//// teleharmonic //////////////////////////////////////////////////////////////
 Pdef(\teleharmonic,
     Ppar([
         Pbind(

@@ -196,4 +196,17 @@ SynthDef(\prayer_bell, { |out, t_trig = 1, sing_switch = 0, freq = 2434, amp = 0
     OffsetOut.ar(out, DirtPan.ar(sig, ~dirt.numChannels, pan))
 }).add;
 
+// A vaguely 808-ish kick drum
+// "n" controls the chirp frequency, "sustain" the overall timescale, "rate" the filter sweep speed,
+// and "voice" the sinewave feedback
+
+SynthDef(\super808, {|out, rate=1, sustain=1, pan, voice=0, n |
+    var env, sound, freq;
+    n = ((n>0)*n) + ((n<1)*3);
+    freq = (n*10).midicps;
+    env = EnvGen.ar(Env.linen(0.01, 0, 1, 1, -3), timeScale:sustain, doneAction:2);
+    sound = LPF.ar(SinOscFB.ar(XLine.ar(freq.expexp(10, 2000, 1000, 8000), freq, 0.025/rate), voice), 9000);
+    OffsetOut.ar(out, DirtPan.ar(sound, ~dirt.numChannels, pan, env))
+}).add
+
 )
