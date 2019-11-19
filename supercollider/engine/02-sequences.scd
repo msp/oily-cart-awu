@@ -162,7 +162,7 @@ Pdef(\twinkle,
             \rings, Pfunc({0.1.rrand(2)}.dup(12)),
             \speed, 1,
             \dur, 10,
-            \gain, 1,
+            \gain, 0.85,
             \orbit, ~out1_2
         )
     ])
@@ -234,7 +234,7 @@ Pdef(\paper,
             \pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
             \room, Pseq([0.75, 0.25, 0], inf),
             \size, Pseq([0.75, 0.25, 0], inf),
-            \gain, 0.8,
+            \gain, 1,
             \orbit, ~out1_2
         )
     ])
@@ -482,11 +482,11 @@ Pdef(\scissors,
             \s, \soundfx,
             \n, Pseq([Prand([8,9,10])], inf),
             \speed, Pseq([Prand([0.5, 1, 2])], inf),
-            \dur, Pseq([4, Rest(4)], inf),
+            \dur, Pseq([4, Rest(2)], inf),
             \pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
             \room, Pseq([0.5, 0.25, 0], inf),
             \size, Pseq([0.5, 0.25, 0], inf),
-            \gain, 0.85,
+            \gain, 1,
             \orbit, ~out1_2
         )
     ])
@@ -540,7 +540,7 @@ Pdef(\sunrise,
             \pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
             \room, Pseq([0.5, 0.25], inf),
             \size, Pseq([0.5, 0.25], inf),
-            \gain, 0.9,
+            \gain, 0.7,
             \orbit, ~out1_2
         ),
     ])
