@@ -722,6 +722,133 @@ Pdef(\teleharmonic,
     ])
 );
 
+//// oooh //////////////////////////////////////////////////////////////////
+Pdef(\oooh,
+	Ppar([
+    	Pbind(
+        	\type, \dirt,
+        	\s, \vocals,
+        	\n, Pseq([Pwrand([4], [10].normalizeSum, inf)], inf),
+        	\speed, Pseq([Prand([1, 0.9, 1.2])], inf),
+        	\dur, Pseq([2, Rest(1)], inf),
+        	\pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
+        	\room, Pseq([0.5, 0.25, 0], inf),
+        	\size, Pseq([0.5, 0.25, 0], inf),
+        	\gain, 0.85,
+        	\orbit, ~out1_2
+    	)
+	])
+);
+
+//// move //////////////////////////////////////////////////////////////////
+Pdef(\move,
+	Ppar([
+    	Pbind(
+        	\type, \dirt,
+        	\s, \samples,
+        	\n, Pseq([Pwrand([1], [10].normalizeSum, inf)], inf),
+        	\speed, Pseq([Prand([0.8, 0.75, 0.9])], inf),
+        	\dur, Pseq([3, Rest(6)], inf),
+//        	\pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
+        	\room, Pseq([0.5, 0.25, 0], inf),
+        	\size, Pseq([0.5, 0.25, 0], inf),
+        	\gain, 0.85,
+        	\orbit, ~out1_2
+    	)
+	])
+);
+
+//// beat //////////////////////////////////////////////////////////////////
+Pdef(\beat,
+	Ppar([
+    	Pbind(
+        	\type, \dirt,
+        	\s, \beat,
+        	\n, Pseq([Prand([0,2,5,1,3,4,7,6])], inf),
+        	\speed, Pseq([Prand([0.8, 1.2, 2])], inf),
+        	\dur, Pseq([2, Rest(0)], inf),
+        	\pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
+        	\room, Pseq([0.5, 0.25, 0], inf),
+        	\size, Pseq([0.5, 0.25, 0], inf),
+        	\gain, 0.85,
+        	\orbit, ~out1_2
+    	)
+	])
+);
+
+//// DubGround //////////////////////////////////////////////////////////////////
+Pdef(\dubground,
+	Ppar([
+    	Pbind(
+        	\type, \dirt,
+        	\s, \samples,
+        	\n, Pseq([Pwrand([0], [10].normalizeSum, inf)], inf),
+        	\speed, Pseq([Prand([0.8, 1.1, 1])], inf),
+        	\dur, Pseq([3, Rest(1)], inf),
+        	\pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
+        	\room, Pseq([0.5, 0.25, 0], inf),
+        	\size, Pseq([0.5, 0.25, 0], inf),
+        	\gain, 0.75,
+        	\orbit, ~out1_2
+    	)
+	])
+);
+
+//// sellotape /////////////////////////////////////////////////////////////////////
+Pdef(\sellotape,
+	Ppar([
+    	Pbind(
+        	\type, \dirt,
+        	\s, \sellotape,
+        	\n, Pseq([Prand([0,1,2])], inf),
+        	\speed, Pseq([Prand([2, 1, 0.6])], inf),
+        	\dur, Pseq([8, Rest(3)], inf),
+        	\pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
+        	\room, Pseq([0.75, 0.25, 0], inf),
+        	\size, Pseq([0.75, 0.25, 0], inf),
+        	\gain, 1,
+        	\orbit, ~out1_2
+    	)
+	])
+);
+
+//// paperrip /////////////////////////////////////////////////////////////////////
+Pdef(\paperrip,
+	Ppar([
+    	Pbind(
+        	\type, \dirt,
+        	\s, \Paper,
+        	\n, Pseq([Prand([8,9])], inf),
+        	\speed, Pseq([Prand([2, 1, 0.6])], inf),
+        	\dur, Pseq([6, Rest(0)], inf),
+        	\pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
+        	\room, Pseq([0.75, 0.25, 0], inf),
+        	\size, Pseq([0.75, 0.25, 0], inf),
+        	\gain, 1.2,
+        	\orbit, ~out1_2
+    	)
+	])
+);
+
+//// bubblewrap /////////////////////////////////////////////////////////////////////
+Pdef(\bubblewrap,
+	Ppar([
+    	Pbind(
+        	\type, \dirt,
+        	\s, \bubblewrap,
+        	\n, Pseq([Prand([0])], inf),
+        	\speed, Pseq([Prand([1, 0.8])], inf),
+        	\dur, Pseq([4, Rest(4)], inf),
+        	\pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
+        	\room, Pseq([0.75, 0.25, 0], inf),
+        	\size, Pseq([0.75, 0.25, 0], inf),
+        	\gain, 0.85,
+        	\orbit, ~out1_2
+    	)
+	])
+);
+
+
 
 
 "".postln;
