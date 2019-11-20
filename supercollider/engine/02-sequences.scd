@@ -740,7 +740,7 @@ Pdef(\oooh,
 	])
 );
 
-//// move //////////////////////////////////////////////////////////////////
+//// move //////////////////////////////////////////////////////////////////////
 Pdef(\move,
 	Ppar([
     	Pbind(
@@ -758,7 +758,7 @@ Pdef(\move,
 	])
 );
 
-//// beat //////////////////////////////////////////////////////////////////
+//// beat //////////////////////////////////////////////////////////////////////
 Pdef(\beat,
 	Ppar([
     	Pbind(
@@ -776,7 +776,7 @@ Pdef(\beat,
 	])
 );
 
-//// DubGround //////////////////////////////////////////////////////////////////
+//// DubGround /////////////////////////////////////////////////////////////////
 Pdef(\dubground,
 	Ppar([
     	Pbind(
@@ -794,7 +794,7 @@ Pdef(\dubground,
 	])
 );
 
-//// sellotape /////////////////////////////////////////////////////////////////////
+//// sellotape /////////////////////////////////////////////////////////////////
 Pdef(\sellotape,
 	Ppar([
     	Pbind(
@@ -812,7 +812,7 @@ Pdef(\sellotape,
 	])
 );
 
-//// paperrip /////////////////////////////////////////////////////////////////////
+//// paperrip //////////////////////////////////////////////////////////////////
 Pdef(\paperrip,
 	Ppar([
     	Pbind(
@@ -830,7 +830,7 @@ Pdef(\paperrip,
 	])
 );
 
-//// bubblewrap /////////////////////////////////////////////////////////////////////
+//// bubblewrap ////////////////////////////////////////////////////////////////
 Pdef(\bubblewrap,
 	Ppar([
     	Pbind(
@@ -847,6 +847,133 @@ Pdef(\bubblewrap,
     	)
 	])
 );
+
+//// synthpluck ////////////////////////////////////////////////////////////////
+Pdef(\synthpluck,
+    Ppar([
+   	 Pbind(
+   		 \type, \dirt,
+   		 \s, \segments,
+   		 \n, Pseq([Prand([0])], inf),
+   		 \speed, Pseq([Prand([0.8, 0.9])], inf),
+   		 \dur, Pseq([4, Rest(0)], inf),
+   		 \pan, Pseq([Prand([0.25, 0.75, 1])], inf),
+   		 \room, Pseq([0.75, 0.25, 0], inf),
+   		 \size, Pseq([0.75, 0.25, 0], inf),
+   		 \gain, 1,
+   		 \orbit, ~out1_2
+   	 )
+    ])
+);
+
+//// synthpluck2 ///////////////////////////////////////////////////////////////
+Pdef(\synthpluck2,
+    Ppar([
+   	 Pbind(
+   		 \type, \dirt,
+   		 \s, \segments,
+   		 \n, Pseq([Prand([7])], inf),
+   		 \speed, Pseq([Prand([1.3, 1.1])], inf),
+   		 \dur, Pseq([4, Rest(0)], inf),
+   		 \pan, Pseq([Prand([0.25, 0.75, 1])], inf),
+   		 \room, Pseq([0.75, 0.25, 0], inf),
+   		 \size, Pseq([0.75, 0.25, 0], inf),
+   		 \gain, 1,
+   		 \orbit, ~out1_2
+   	 )
+    ])
+);
+
+//// chordpluck ////////////////////////////////////////////////////////////////
+Pdef(\chordpluck,
+    Ppar([
+   	 Pbind(
+   		 \type, \dirt,
+   		 \s, \segments,
+   		 \n, Pseq([Prand([1])], inf),
+   		 \speed, Pseq([Prand([1.5, 2, 3])], inf),
+   		 \dur, Pseq([2, Rest(0)], inf),
+   		 \pan, Pseq([Prand([0.25, 0.75, 1])], inf),
+   		 \room, Pseq([0.75, 0.25, 0], inf),
+   		 \size, Pseq([0.75, 0.25, 0], inf),
+   		 \gain, 0.85,
+   		 \orbit, ~out1_2
+   	 )
+    ])
+);
+
+//// percrump //////////////////////////////////////////////////////////////////
+Pdef(\percrump,
+    Ppar([
+   	 Pbind(
+   		 \type, \dirt,
+   		 \s, \segments,
+   		 \n, Pseq([Prand([2])], inf),
+   		 \speed, Pseq([Prand([1, 0.9])], inf),
+   		 \dur, Pseq([2, Rest(0)], inf),
+   		 \pan, Pseq([Prand([0.25, 0.75, 1])], inf),
+   		 \room, Pseq([0.75, 0.25, 0], inf),
+   		 \size, Pseq([0.75, 0.25, 0], inf),
+   		 \gain, 0.85,
+   		 \orbit, ~out1_2
+   	 )
+    ])
+);
+
+//// peratmos //////////////////////////////////////////////////////////////////
+Pdef(\peratmos,
+	Ppar([
+    	Pbind(
+        	\type, \dirt,
+        	\s, \segments,
+        	\n, 3,
+        	\speed, Pseq([Prand([0.4, 0.8])], inf),
+        	\dur, Pseq([Pwrand([0.1, 0.2, 1], [30, 15, 1].normalizeSum, inf)], inf),
+        	\pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
+        	\room, Pseq([0.5, 0.25], inf),
+        	\size, Pseq([0.5, 0.25], inf),
+        	\gain, 0.65,
+        	\orbit, ~out1_2
+    	),
+	])
+);
+
+//// padwater //////////////////////////////////////////////////////////////////
+Pdef(\padwater,
+	Ppar([
+    	Pbind(
+        	\type, \dirt,
+        	\s, \segments,
+        	\n, 4,
+        	\speed, Pseq([Prand([0.4, 0.8])], inf),
+        	\dur, Pseq([Pwrand([0.1, 0.2, 1], [30, 15, 1].normalizeSum, inf)], inf),
+        	\pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
+        	\room, Pseq([0.5, 0.25], inf),
+        	\size, Pseq([0.5, 0.25], inf),
+        	\gain, 0.65,
+        	\orbit, ~out1_2
+    	),
+	])
+);
+
+//// bassy /////////////////////////////////////////////////////////////////////
+Pdef(\bassy,
+    Ppar([
+   	 Pbind(
+   		 \type, \dirt,
+   		 \s, \segments,
+   		 \n, Pseq([Prand([5, 6])], inf),
+   		 \speed, Pseq([Prand([1, 0.9])], inf),
+   		 \dur, Pseq([2, Rest(1)], inf),
+   		 \pan, Pseq([Prand([0.75, 1])], inf),
+   		 \room, Pseq([0.75, 0.25, 0], inf),
+   		 \size, Pseq([0.75, 0.25, 0], inf),
+   		 \gain, 0.9,
+   		 \orbit, ~out1_2
+   	 )
+    ])
+);
+
 
 
 
