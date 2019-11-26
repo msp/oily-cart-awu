@@ -1082,7 +1082,27 @@ Pdef(\dragrat,
 	])
 );
 
-
+//// sharpharp /////////////////////////////////////////////////////////////////
+Pdef(\sharpharp,
+	Ppar([
+  	  Pbind(
+  		  \type, \dirt,
+  		  \s, \fsaw,
+          \freq, Pseq([Prand(Scale.ritusen.degrees.mirror2 + 48)], inf).midicps,
+          \dur, Pseq([Pwrand([0.125, 0.25, 0.5], [50, 10, 1].normalizeSum, inf)], inf),
+  		  \att, Pseq([Pwrand([0.01, 0.02, 0.05], [50, 10, 1].normalizeSum, inf)], inf),
+  		  \dcy, Pseq([Pwrand([0.25, 0.5, 0.75, 1], [4, 10, 20, 8].normalizeSum, inf)], inf),
+          \sustain, 1,
+            // \cutoff, 400,
+           \cutoff, Pseq([Pwrand([400, 600, 800, 1000, 1200, 1500, 2000], [14, 12, 10, 8, 6, 4, 2].normalizeSum, inf)], inf),
+  		  \pan, Pseq([Prand([0.75, 1])], inf),
+  		  \room, Pseq([0.75, 0.5], inf),
+  		  \size, Pseq([0.75, 0.5], inf),
+  		  \gain, 0.9,
+  		  \orbit, ~out1_2
+  	  )
+	])
+);
 
 
 

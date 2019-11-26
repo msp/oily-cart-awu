@@ -207,6 +207,12 @@ SynthDef(\super808, {|out, rate=1, sustain=1, pan, voice=0, n |
     env = EnvGen.ar(Env.linen(0.01, 0, 1, 1, -3), timeScale:sustain, doneAction:2);
     sound = LPF.ar(SinOscFB.ar(XLine.ar(freq.expexp(10, 2000, 1000, 8000), freq, 0.025/rate), voice), 9000);
     OffsetOut.ar(out, DirtPan.ar(sound, ~dirt.numChannels, pan, env))
-}).add
+}).add;
 
+SynthDef( 'fsaw', {|freq=30, att=0.01, dcy=0.75,cutoff=1400,rq=1, dist=1|
+    var env=EnvGen.kr(Env.perc(att,dcy), doneAction: 2);
+    Out.ar(0,
+        Pan2.ar(RLPF.ar(Saw.ar(freq, mul: 0.5*EnvGen.kr(Env.perc(att,dcy), doneAction: 2)), cutoff, rq),0)
+    )
+}).add;
 )
