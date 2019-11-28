@@ -512,20 +512,20 @@ Pdef(\intro,
 
 //// choir /////////////////////////////////////////////////////////////////////
 Pdef(\choir,
-    Ppar([
-        Pbind(
-            \type, \dirt,
-            \s, \vocals,
-            \n, Pseq([Pwrand([0], [10].normalizeSum, inf)], inf),
-            \speed, Pseq([Prand([0.8, 1, 1.2, 1.4])], inf),
-            \dur, Pseq([4, Rest(2), 6], inf),
-            \pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
-            \room, Pseq([0.5, 0.25], inf),
-            \size, Pseq([0.5, 0.25], inf),
-            \gain, 0.9,
-            \orbit, ~out1_2
-        )
-    ])
+	Ppar([
+    	Pbind(
+        	\type, \dirt,
+        	\s, \vocals,
+        	\n, Pseq([Pwrand([0], [10].normalizeSum, inf)], inf),
+        	\speed, Pseq([Prand([1.1, 1.2, 1.4])], inf),
+        	\dur, Pseq([4, Rest(10), 6], inf),
+        	\pan, Pseq([Prand([0, 0.25, 0.75, 1])], inf),
+        	\room, Pseq([0.5, 0.75], inf),
+        	\size, Pseq([0.5, 0.75], inf),
+        	\gain, 0.75,
+        	\orbit, ~out1_2
+    	)
+	])
 );
 
 //// sunrise ///////////////////////////////////////////////////////////////////
@@ -1010,22 +1010,41 @@ Pdef(\uplift2,
 	])
 );
 
+//// uplift3 ///////////////////////////////////////////////////////////////////
+Pdef(\uplift3,
+    Ppar([
+        Pbind(
+     	   \type, \dirt,
+     	   \s, \segments,
+     	   \n, Pseq([Prand([17])], inf),
+     	   \speed, Pseq([Prand([0.9, 0.8, 1])], inf),
+     	   \dur, Pseq([16, Rest(2)], inf),
+     	   \pan, Pseq([Prand([0.75, 1])], inf),
+     	   \room, Pseq([0.75, 1], inf),
+     	   \size, Pseq([0.75, 1], inf),
+		   \gain, 1,
+     	   \orbit, ~out1_2
+        )
+    ])
+);
+
+
 //// atmossy ///////////////////////////////////////////////////////////////////
 Pdef(\atmossy,
-	Ppar([
-  	  Pbind(
-  		  \type, \dirt,
-  		  \s, \atmos,
-  		  \n, Pseq([Prand([0])], inf),
-  		  \speed, Pseq([Prand([1.3, 1.1])], inf),
-  		  \dur, Pseq([3, Rest(1)], inf),
-  		  \pan, Pseq([Prand([0.5, 0.75, 1])], inf),
-  		  \room, Pseq([0.75, 0.25, 0], inf),
-  		  \size, Pseq([0.75, 0.25, 0], inf),
-  		  \gain, 0.5,
-  		  \orbit, ~out1_2
-  	  )
-	])
+    Ppar([
+        Pbind(
+     	   \type, \dirt,
+     	   \s, \atmos,
+     	   \n, Pseq([Prand([1])], inf),
+     	   \speed, Pseq([Prand([1.3, 1.1])], inf),
+     	   \dur, Pseq([3, Rest(1)], inf),
+     	   \pan, Pseq([Prand([0.5, 0.75, 1])], inf),
+     	   \room, Pseq([0.75, 0.25, 0], inf),
+     	   \size, Pseq([0.75, 0.25, 0], inf),
+     	   \gain, 0.4,
+     	   \orbit, ~out1_2
+        )
+    ])
 );
 
 //// rattly ////////////////////////////////////////////////////////////////////
@@ -1048,20 +1067,20 @@ Pdef(\rattly,
 
 //// dragflap //////////////////////////////////////////////////////////////////
 Pdef(\dragflap,
-	Ppar([
-  	  Pbind(
-  		  \type, \dirt,
-  		  \s, \dragonflap,
-  		  \n, Pseq([Prand([3, 4, 5, 6])], inf),
-  		  \speed, Pseq([Prand([0.6, 0.8])], inf),
-  		  \dur, Pseq([4, Rest(0)], inf),
-  		  \pan, Pseq([Prand([0.75, 1])], inf),
-  		  \room, Pseq([0.5, 0.25, 0], inf),
-  		  \size, Pseq([0.75, 0.25, 0], inf),
-  		  \gain, 1,
-  		  \orbit, ~out1_2
-  	  )
-	])
+    Ppar([
+        Pbind(
+     	   \type, \dirt,
+     	   \s, \dragonflap,
+     	   \n, Pseq([Prand([3, 4, 5, 6])], inf),
+     	   \speed, Pseq([Prand([0.6, 0.8])], inf),
+     	   \dur, Pseq([4, Rest(0)], inf),
+     	   \pan, Pseq([Prand([0.75, 1])], inf),
+     	   \room, Pseq([0.5, 0.25, 0], inf),
+     	   \size, Pseq([0.75, 0.25, 0], inf),
+     	   \gain, 1,
+     	   \orbit, ~out1_2
+        )
+    ])
 );
 
 //// dragrat ///////////////////////////////////////////////////////////////////
@@ -1103,6 +1122,98 @@ Pdef(\sharpharp,
   	  )
 	])
 );
+
+//// firey /////////////////////////////////////////////////////////////////////
+Pdef(\firey,
+    Ppar([
+        Pbind(
+     	   \type, \dirt,
+     	   \s, \fire,
+     	   \n, Pseq([Prand([0, 1, 2])], inf),
+     	   \speed, Pseq([Prand([1, 0.8])], inf),
+     	   \dur, Pseq([8, Rest(4)], inf),
+     	   \pan, Pseq([Prand([0.5, 0.75, 1])], inf),
+     	   \room, Pseq([0.75, 0.25], inf),
+     	   \size, Pseq([0.75, 0.25, 0], inf),
+     	   \gain, 1,
+     	   \orbit, ~out1_2
+        )
+    ])
+);
+
+//// tonerat ///////////////////////////////////////////////////////////////////
+Pdef(\tonerat,
+    Ppar([
+        Pbind(
+     	   \type, \dirt,
+     	   \s, \segments,
+     	   \n, Pseq([Prand([19])], inf),
+     	   \speed, Pseq([Prand([1, 0.8])], inf),
+     	   \dur, Pseq([2, Rest(3)], inf),
+     	   \pan, Pseq([Prand([0.5, 0.75, 1])], inf),
+     	   \room, Pseq([0.75, 0.25], inf),
+     	   \size, Pseq([0.75, 0.25, 0], inf),
+     	   \gain, 0.7,
+     	   \orbit, ~out1_2
+        )
+    ])
+);
+
+//// dream /////////////////////////////////////////////////////////////////////
+Pdef(\dream,
+    Ppar([
+        Pbind(
+     	   \type, \dirt,
+     	   \s, \segments,
+     	   \n, Pseq([Prand([20])], inf),
+     	   \speed, Pseq([Prand([0.8])], inf),
+     	   \dur, Pseq([4, Rest(0)], inf),
+     	   \pan, Pseq([Prand([0.5, 0.75, 1])], inf),
+     	   \room, Pseq([0.75, 0.25], inf),
+     	   \size, Pseq([0.75, 0.25, 0], inf),
+     	   \gain, 0.85,
+     	   \orbit, ~out1_2
+        )
+    ])
+);
+
+//// snappy ////////////////////////////////////////////////////////////////////
+Pdef(\snappy,
+    Ppar([
+        Pbind(
+     	   \type, \dirt,
+     	   \s, \segments,
+     	   \n, Pseq([Prand([21])], inf),
+     	   \speed, Pseq([Prand([1])], inf),
+     	   \dur, Pseq([4, Rest(4)], inf),
+     	   \pan, Pseq([Prand([0.5, 0.75, 1])], inf),
+     	   \room, Pseq([0.75, 0.25], inf),
+     	   \size, Pseq([0.75, 0.25, 0], inf),
+     	   \gain, 0.6,
+     	   \orbit, ~out1_2
+        )
+    ])
+);
+
+//// basedup ///////////////////////////////////////////////////////////////////
+Pdef(\basedup,
+    Ppar([
+        Pbind(
+     	   \type, \dirt,
+     	   \s, \segments,
+     	   \n, Pseq([Prand([22])], inf),
+     	   \speed, Pseq([Prand([1])], inf),
+     	   \dur, Pseq([4, Rest(2)], inf),
+     	   \pan, Pseq([Prand([0.5, 0.75, 1])], inf),
+     	   \room, Pseq([0.75, 0.5], inf),
+     	   \size, Pseq([0.75, 0.5, 0.25], inf),
+     	   \gain, 0.75,
+     	   \orbit, ~out1_2
+        )
+    ])
+);
+
+
 
 
 
